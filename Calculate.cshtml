@@ -1,0 +1,42 @@
+﻿@using RatingsCalculator.ViewModels
+@model RatingsResultViewModel
+
+@{
+    ViewBag.Title = "Calculate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+    <head>
+        <title>Result</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>@Html.LabelFor(m => m.InitialRating)</td>
+                <td>@Html.TextBoxFor(m => m.InitialRating)</td>
+                <td>@Html.LabelFor(m => m.FinalRating)</td>
+                <td>@Html.TextBoxFor(m => m.FinalRating)</td>
+                <td>@Html.LabelFor(m => m.RatingChange)</td>
+                <td>@Html.TextBoxFor(m => m.RatingChange)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.MatchCount)</td>
+                <td>@Html.TextBoxFor(m => m.MatchCount)</td>
+                <td>@Html.LabelFor(m => m.WinCount)</td>
+                <td>@Html.TextBoxFor(m => m.WinCount)</td>
+                <td>@Html.LabelFor(m => m.LossCount)</td>
+                <td>@Html.TextBoxFor(m => m.LossCount)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(m => m.BestWin)</td>
+                <td>@Html.TextBoxFor(m => m.BestWin)</td>
+                <td>@Html.LabelFor(m => m.WorstLoss)</td>
+                <td>@Html.TextBoxFor(m => m.WorstLoss)</td>                
+            </tr>
+            <tr>
+                <td>@Html.ActionLink("Back", "Index")</td>
+            </tr>
+        </table>
+    </body>
+</html>

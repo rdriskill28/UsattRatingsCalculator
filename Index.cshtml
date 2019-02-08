@@ -1,0 +1,51 @@
+﻿@using RatingsCalculator.ViewModels
+@model RatingsViewModel
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<html>
+    <head>
+        <title>Ratings</title>
+    </head>
+    <body>
+        <form action="@Url.Action("Calculate", "Ratings")" method="post">
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(m => m.InitialRating)</td>
+                    <td>@Html.TextBoxFor(m => m.InitialRating, null, new { maxlength = 4 })
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessage("InitialRating")</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.WinString)</td>
+                    <td>@Html.TextAreaFor(m => m.WinString)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessage("WinString")</td>
+                </tr>
+                <tr>
+                    <td>@Html.LabelFor(m => m.LossString)</td>
+                    <td>@Html.TextAreaFor(m => m.LossString)</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>@Html.ValidationMessage("LossString")</td>
+                </tr>
+                <tr>
+                    <td><button type="submit" id="btnSubmit" value="Calculate">Calculate Rating</button></td>
+                    <td>@Html.ValidationMessage("WinLossValidation")</td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
+
+
